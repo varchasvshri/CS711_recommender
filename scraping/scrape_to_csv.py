@@ -2,30 +2,10 @@ import urllib.request, urllib.error, urllib.parse
 from bs4 import BeautifulSoup
 import ssl
 import requests
-import regex as re
-import os
-from datetime import date, timedelta
-import shutil
-
-today = date.today()
 
 ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
-
-def is_downloadable(url):
-    """
-    Does the url contain a downloadable resource
-    """
-    h = requests.head(url, allow_redirects=True)
-    header = h.headers
-    content_type = header.get('content-type')
-    if 'text' in content_type.lower():
-        return False
-    if 'html' in content_type.lower():
-        return False
-    return True
-
 
 for rno in range(170001, 170831):
     roll_no = str(rno)
