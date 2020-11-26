@@ -7,10 +7,8 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-for rno in range(170001, 170831):
-    roll_no = str(rno)
-    # roll_no = '180207'
-    url = 'http://172.26.142.68/dccourse/studdc.php?roll_no='+roll_no
+for roll_no in range(170001, 170831):
+    url = 'http://172.26.142.68/dccourse/studdc.php?roll_no={}'.format(roll_no)
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = urllib.request.urlopen(req).read()
     soup = BeautifulSoup(html, 'html.parser')
