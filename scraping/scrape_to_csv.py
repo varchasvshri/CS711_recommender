@@ -27,14 +27,22 @@ def is_downloadable(url):
     return True
 
 
-url = 'http://172.26.142.68/dccourse/studdc.php?roll_no=180207'
-req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-html = urllib.request.urlopen(req).read()
-soup = BeautifulSoup(html, 'html.parser')
+for rno in range(170001, 170831):
+    roll_no = str(rno)
+    # roll_no = '180207'
+    url = 'http://172.26.142.68/dccourse/studdc.php?roll_no='+roll_no
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    html = urllib.request.urlopen(req).read()
+    soup = BeautifulSoup(html, 'html.parser')
 
-rows = [tr.findAll('td') for tr in soup.findAll('tr')]
-for it in rows:
-    with open('result.csv', 'a') as f:
-        f.write(", ".join(str(e).replace('<td>','').replace('</td>','').replace('<td valign="top">', '').replace('<font face="Verdana, Arial, Helvetica, sans-serif" size="2">', '').replace('</font>', '').replace('&amp', '&') for e in it) + '\n')
+    rows = [tr.findAll('td') for tr in soup.findAll('tr')]
+    flag = True
+    for it in rows:
+        if flag:
+            flag = False
+            continue
+        it = it[0:3] + [roll_no]
+        with open('result.csv', 'a') as f:
+            f.write(", ".join(str(e).replace('<td>','').replace('</td>','').replace('<td valign="top">', '').replace('<font face="Verdana, Arial, Helvetica, sans-serif" size="2">', '').replace('</font>', '').replace('&amp', '&') for e in it) + '\n')
 
-print(soup)
+    # print(soup)
