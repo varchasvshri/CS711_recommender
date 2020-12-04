@@ -4,14 +4,14 @@ import json
 f = open('student.json')
 inp = json.load(f)
 
-user_dept = inp[0]['Branch']
-pref1 = inp[0]['Dept1']
-pref2 = inp[0]['Dept2']
-pref3 = inp[0]['Dept3']
+user_dept = inp['Branch']
+pref1 = inp['Dept1']
+pref2 = inp['Dept2']
+pref3 = inp['Dept3']
 user_liked = np.array([])
 user_disliked = np.array([])
-user_rno = inp[0]['Rollno']
-for c in inp[0]['Courses']:
+user_rno = inp['Rollno']
+for c in inp['Courses']:
     if c['Love'] == True:
         user_liked = np.append(user_liked, [c['CourseID']])
     elif c['Hate'] == True:

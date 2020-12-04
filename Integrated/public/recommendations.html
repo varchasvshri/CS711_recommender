@@ -43,8 +43,11 @@
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/recommendations.html">Recommendations <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
@@ -55,24 +58,13 @@
                 <div class="col-3">
                     <ul class="list-group" id="studentData">
                         <li class="list-group-item"><img class="img-fluid" src="img/avatar.png"></li>
-                        <li class="list-group-item text-center" id="studentName"></li>
-                        <li class="list-group-item text-center" id="studentBranch"></li>
-                        <li class="list-group-item text-center" id="studentCPI"></li>
+                        <li class="list-group-item text-center">John Doe</li>
                     </ul>
                 </div>
                 <div class="col-6">
-                    <!-- Add Course to List -->
-                    <div class="form-group">
-                        <select id="selectCourses" class="custom-select mt-2">
-                            <option disabled selected>Please select a course...</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <button id="addCourseToList" type="submit" class="btn btn-primary">Add</button>
-                    </div>
-
                     <ul class="list-group" id="studentCourses">
-                        <li class="list-group-item list-group-item-secondary bg-dark text-light">Your Subjects</li>
+                        <li class="list-group-item list-group-item-secondary bg-dark text-light">Your Recommended Subjects</li>
+                        <li class="list-group-item" id="courseLoading">Loading... This may take a while, so you should probably grab coffee or something.</li>
                     </ul>
                 </div>
             </div>
@@ -87,7 +79,7 @@
             crossorigin="anonymous"></script>
 
         <!-- Our Code, Must go before due to the jQuery requirements -->
-        <script src="js/main.js"></script>
+        <script src="js/recommendation.js"></script>
     </body>
 
 </html>

@@ -6,15 +6,28 @@ $(document).ready(() => {
         method: "GET",
         success: (data) => {
             student = data;
-            $("#studentName").text(data.Name);
 
-            let branchControl = $("<input/>", {
-                class:"form-control",
-                value:data.Branch,
-                id:"studentBranchControl"
-            });
 
-            branchControl.change(() => {
+            // My Department of Study
+            let branchControl = $("#studentBranch");
+
+            new Promise((resolve) => {
+                $.ajax({
+                    type:"GET",
+                    url: "/GetBranches",
+                    success: (data) => {
+                        for(let a = 0; a < data.length; a++) {
+                            let deptdata = data[a];
+                            let option = $("<option>").val(deptdata.ID).text(deptdata.DeptName);
+                            if(deptdata.ID == student.Branch) {
+                                option.prop("selected", true);
+                            }
+                            option.appendTo("#studentBranch")
+                        }
+                        resolve();
+                    }
+                })
+            }).then(() => branchControl.change(() => {
                 $.ajax({
                     type: "POST",
                     url: "/UpdateBranch",
@@ -22,10 +35,92 @@ $(document).ready(() => {
                         branchData: branchControl.val()
                     }
                 });
-            })
+            }));
 
-            let branch = $("<p/>").text("My branch is ").append(branchControl);
-            $("#studentBranch").append(branch)
+            // Like One
+            let branchControlLikeOne = $("#studentBranchLikeOne");
+            new Promise((resolve) => {
+                $.ajax({
+                    type:"GET",
+                    url: "/GetBranches",
+                    success: (data) => {
+                        for(let a = 0; a < data.length; a++) {
+                            let deptdata = data[a];
+                            let option = $("<option>").val(deptdata.ID).text(deptdata.DeptName);
+                            if(deptdata.ID == student.Dept1) {
+                                option.prop("selected", true);
+                            }
+                            option.appendTo("#studentBranchLikeOne")
+                        }
+                        resolve();
+                    }
+                })
+            }).then(() => branchControlLikeOne.change(() => {
+                $.ajax({
+                    type: "POST",
+                    url: "/UpdateBranchLikeOne",
+                    data: {
+                        branchData: branchControlLikeOne.val()
+                    }
+                });
+            }));
+
+            // Like Two
+            let branchControlLikeTwo = $("#studentBranchLikeTwo");
+            new Promise((resolve) => {
+                $.ajax({
+                    type:"GET",
+                    url: "/GetBranches",
+                    success: (data) => {
+                        for(let a = 0; a < data.length; a++) {
+                            let deptdata = data[a];
+                            let option = $("<option>").val(deptdata.ID).text(deptdata.DeptName);
+                            if(deptdata.ID == student.Dept2) {
+                                option.prop("selected", true);
+                            }
+                            option.appendTo("#studentBranchLikeTwo")
+                        }
+                        resolve();
+                    }
+                })
+            }).then(() => branchControlLikeTwo.change(() => {
+                $.ajax({
+                    type: "POST",
+                    url: "/UpdateBranchLikeTwo",
+                    data: {
+                        branchData: branchControlLikeTwo.val()
+                    }
+                });
+            }));
+
+            // Like Three
+            let branchControlLikeThree = $("#studentBranchLikeThree");
+            new Promise((resolve) => {
+                $.ajax({
+                    type:"GET",
+                    url: "/GetBranches",
+                    success: (data) => {
+                        for(let a = 0; a < data.length; a++) {
+                            let deptdata = data[a];
+                            let option = $("<option>").val(deptdata.ID).text(deptdata.DeptName);
+                            if(deptdata.ID == student.Dept3) {
+                                option.prop("selected", true);
+                            }
+                            option.appendTo("#studentBranchLikeThree")
+                        }
+                        resolve();
+                    }
+                })
+            }).then(() => branchControlLikeThree.change(() => {
+                $.ajax({
+                    type: "POST",
+                    url: "/UpdateBranchLikeThree",
+                    data: {
+                        branchData: branchControlLikeThree.val()
+                    }
+                });
+            }));
+            
 
             let CPIControl = $("<input/>", {
                 class:"form-control",
@@ -45,9 +140,6 @@ $(document).ready(() => {
 
             let CPI = $("<p/>").text("My CPI is ").append(CPIControl);
             $("#studentCPI").append(CPI)
-
-
-            getStudentCourse(1);
         }
     })
     initProcess();
@@ -102,7 +194,7 @@ function doesStudentHaveCourseID(courseID) {
 
 function addCourseToStudentCourseList(course) {
     let courseName = course.Name;
-    let courseID = course.ID;
+    let courseID = course.CourseID;
 
     let loveInput = $("<input/>", {
         type: "radio",
@@ -182,7 +274,7 @@ function addCoursesToSelectCourseList() {
 }
 
 function addCourseToSelectCourseList(courseData) {
-    $("<option>").val(courseData.ID).text(courseData.Name).appendTo("#selectCourses");
+    $("<option>").val(courseData.CourseID).text(courseData.Name).appendTo("#selectCourses");
 }
 
 function isNumber(n) {
@@ -192,7 +284,7 @@ function isNumber(n) {
 function addSelectedCourse() {
     let select = $("#selectCourses");
     let option = $("#selectCourses option:selected");
-    if (isNumber(option.val())) {
+    if (option.val() !== "") {
         $.ajax({
             type: "POST",
             url: "/AddCourseToStudent",

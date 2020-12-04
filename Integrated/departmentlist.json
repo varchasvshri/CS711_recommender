@@ -1,0 +1,62 @@
+[
+    {
+        "DeptName": "Earth Sciences",
+        "ID": "ES"
+    },
+    {
+        "DeptName": "Ind. & Management Engg.",
+        "ID": "IME"
+    },
+    {
+        "DeptName": "Humanities & Soc. Sciences",
+        "ID": "HSS"
+    },
+    {
+        "DeptName": "Chemical Engg.",
+        "ID": "CHE"
+    },
+    {
+        "DeptName": "Mechanical Engineering",
+        "ID": "ME"
+    },
+    {
+        "DeptName": "Computer Science & Engg.",
+        "ID": "CSE"
+    },
+    {
+        "DeptName": "Biol.Sci. And Bio.Engg.",
+        "ID": "BSE"
+    },
+    {
+        "DeptName": "Aerospace Engg.",
+        "ID": "AE"
+    },
+    {
+        "DeptName": "Economics",
+        "ID": "ECO"
+    },
+    {
+        "DeptName": "Chemistry",
+        "ID": "CHM"
+    },
+    {
+        "DeptName": "Materials Science & Engg.",
+        "ID": "MSE"
+    },
+    {
+        "DeptName": "Electrical Engg.",
+        "ID": "EE"
+    },
+    {
+        "DeptName": "Mathematics",
+        "ID": "MTH"
+    },
+    {
+        "DeptName": "Civil Engg.",
+        "ID": "CE"
+    },
+    {
+        "DeptName": "Physics",
+        "ID": "PHY"
+    }
+]

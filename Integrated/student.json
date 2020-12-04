@@ -1,0 +1,22 @@
+{
+  "Branch": "CHM",
+  "Rollno": 180207,
+  "CPI": "333",
+  "Courses": [
+    {
+      "CourseID": "CE601",
+      "Love": true,
+      "Hate": false,
+      "Name": "STATISTICAL ANALYSIS FOR CIVIL ENGINEERS"
+    },
+    {
+      "CourseID": "EE612A",
+      "Love": true,
+      "Hate": false,
+      "Name": "FIBER OPTIC SYSTEMS I"
+    }
+  ],
+  "Dept1": "ES",
+  "Dept3": "MTH",
+  "Dept2": "CSE"
+}
