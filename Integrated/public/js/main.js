@@ -140,6 +140,25 @@ $(document).ready(() => {
 
             let CPI = $("<p/>").text("My CPI is ").append(CPIControl);
             $("#studentCPI").append(CPI)
+
+            let RNOControl = $("<input/>", {
+                class:"form-control",
+                value:data.Rollno,
+                id:"studentRNOControl"
+            });
+
+            RNOControl.change(() => {
+                $.ajax({
+                    type: "POST",
+                    url: "/UpdateRNO",
+                    data: {
+                        RNO: RNOControl.val()
+                    }
+                });
+            })
+
+            let RNO = $("<p/>").text("My RollNumber is ").append(RNOControl);
+            $("#studentRollNo").append(RNO)
         }
     })
     initProcess();

@@ -11,7 +11,7 @@ const port = process.env.PORT || 80;
 
 const studentData = {
     "Branch": "",
-    "Rollno": getRandomInt(20000),
+    "Rollno": 0,
     "CPI": "0",
     "Courses": [],
     "Dept1": "",
@@ -222,6 +222,13 @@ app.post("/UpdateBranchLikeThree", (req, res) => {
 app.post("/UpdateCPI", (req, res) => {
     let CPIData = req.body.CPI;
     studentData.CPI = CPIData;
+    updateStudentData();
+    res.json({ success: true });
+})
+
+app.post("/UpdateRNO", (req, res) => {
+    let RNOData = req.body.RNO;
+    studentData.Rollno = RNOData;
     updateStudentData();
     res.json({ success: true });
 })
