@@ -238,7 +238,7 @@ function addCourseToStudentCourseList(course) {
     let listItem = $("<li>");
     listItem.addClass("list-group-item");
     listItem.addClass("d-flex justify-content-between align-items-center");
-    listItem.text(courseName);
+    listItem.text(`${courseID} - ${courseName}`);
     listItem.append(buttonGroup);
 
     $("#studentCourses").append(listItem);
@@ -274,7 +274,7 @@ function addCoursesToSelectCourseList() {
 }
 
 function addCourseToSelectCourseList(courseData) {
-    $("<option>").val(courseData.CourseID).text(courseData.Name).appendTo("#selectCourses");
+    $("<option>").val(courseData.CourseID).text(`${courseData.CourseID} - ${courseData.Name}`).appendTo("#selectCourses");
 }
 
 function isNumber(n) {

@@ -1,34 +1,15 @@
 {
-  "Branch": "PHY",
-  "Rollno": 180207,
-  "CPI": "333",
+  "Branch": "",
+  "Rollno": 2726,
+  "CPI": "0",
   "Courses": [
     {
       "CourseID": "CE601",
-      "Love": true,
-      "Hate": false,
-      "Name": "STATISTICAL ANALYSIS FOR CIVIL ENGINEERS"
-    },
-    {
-      "CourseID": "EE612A",
-      "Love": true,
-      "Hate": false,
-      "Name": "FIBER OPTIC SYSTEMS I"
-    },
-    {
-      "CourseID": "PHY224A",
-      "Love": true,
-      "Hate": false,
-      "Name": "OPTICS"
-    },
-    {
-      "CourseID": "CE601",
-      "Love": true,
-      "Hate": false,
-      "Name": "STATISTICAL ANALYSIS FOR CIVIL ENGINEERS"
+      "Love": false,
+      "Hate": false
     }
   ],
-  "Dept1": "ES",
-  "Dept3": "MTH",
-  "Dept2": "CSE"
+  "Dept1": "",
+  "Dept3": "",
+  "Dept2": ""
 }
