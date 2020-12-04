@@ -6,7 +6,7 @@ $(document).ready(() => {
         success: (data) => {
             $("#courseLoading").hide();
             for(let i = 0; i < data.length; i++) {
-                if(i >= 20) {
+                if(i >= 50) {
                     return;
                 }
                 let course = data[i];

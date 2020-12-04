@@ -1,13 +1,12 @@
 {
   "Branch": "",
-  "Rollno": "180456",
+  "Rollno": 0,
   "CPI": "0",
   "Courses": [
     {
-      "CourseID": "MTH423A",
+      "CourseID": "CE601",
       "Love": false,
-      "Hate": true,
-      "Name": "INTRODUCTION TO CONTINUUM MACHANICS"
+      "Hate": false
     }
   ],
   "Dept1": "",

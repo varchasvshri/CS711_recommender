@@ -36,9 +36,12 @@ app.get("/GetStudentData", (req, res) => {
 });
 
 app.get("/GetRecommendationData", (req, res) => {
-    let python = spawn('python3', ['Recommend_script.py']);
+    let python = spawn('python', ['Recommend_script.py']);
     python.stdout.on('data', function (data) {
         console.log("Processing done.");
+    });
+    python.stderr.on('data', (data) => {
+        console.log(`spawn stderr: ${data}`);
     });
     python.on('close', (code) => {
         recommendationData = JSON.parse(fs.readFileSync(__dirname + "/recommendation.json"));
