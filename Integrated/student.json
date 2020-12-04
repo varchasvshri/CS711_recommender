@@ -2,13 +2,7 @@
   "Branch": "",
   "Rollno": 0,
   "CPI": "0",
-  "Courses": [
-    {
-      "CourseID": "CE601",
-      "Love": false,
-      "Hate": false
-    }
-  ],
+  "Courses": [],
   "Dept1": "",
   "Dept3": "",
   "Dept2": ""

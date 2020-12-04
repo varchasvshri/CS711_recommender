@@ -75,6 +75,35 @@ app.get("/GetStudentCourseData/:id", (req, res) => {
     }
 });
 
+app.get("/RemoveCourse/:id", (req, res) => {
+    const { id } = req.params;
+    if (id !== "") {
+        let courses = studentData.Courses;
+        let found = false;
+        let course;
+        let courseIndex = 0;
+        for (let i = 0; i < courses.length; i++) {
+            course = courses[i];
+            if (course.CourseID == id) {
+                found = true;
+                courseIndex = i;
+                i = courses.length;
+            }
+        }
+        if (found) {
+            studentData.Courses = (studentData.Courses.filter(function (value, index, arr) {
+                return index != courseIndex;
+            }));
+            updateStudentData();
+            res.json({success:true});
+        } else {
+            res.json({ "error": true, "message": "Course not found" })
+        }
+    } else {
+        res.destroy();
+    }
+});
+
 app.get("/GetCourseData/:id", (req, res) => {
     const { id } = req.params;
     if (isNumber(id)) {

@@ -247,14 +247,24 @@ function addCourseToStudentCourseList(course) {
         hateButton.button('toggle');
     }
 
+    let deleteButton = $("<input/>", {
+        type: "button",
+        name: `options-${courseID}`,
+        value: "Delete"
+    });
+    deleteButton.addClass("btn btn-danger");
+    deleteButton.text("Delete")
+
     let buttonGroup = $("<div/>");
     buttonGroup.addClass("btn-group btn-group-toggle");
     buttonGroup.attr("id", `courseButtons-${courseID}`);
     buttonGroup.attr("data-toggle", "buttons");
     buttonGroup.append(loveButton);
     buttonGroup.append(hateButton);
+    buttonGroup.append(deleteButton);
 
     let listItem = $("<li>");
+    listItem.prop("id", `course-${courseID}`)
     listItem.addClass("list-group-item");
     listItem.addClass("d-flex justify-content-between align-items-center");
     listItem.text(`${courseID} - ${courseName}`);
@@ -267,6 +277,18 @@ function addCourseToStudentCourseList(course) {
         $.ajax({
             url: `/ReactCourseData/${courseID}/${radioValue}`,
             method: "GET"
+        })
+    });
+
+    $(`#courseButtons-${courseID} [type="button"]`).click(() => {
+        $.ajax({
+            url: `/RemoveCourse/${courseID}`,
+            method: "GET",
+            success: (data) => {
+                if(data.success) {
+                    $(`#course-${courseID}`).remove();
+                }
+            }
         })
     });
 }
