@@ -9,7 +9,15 @@ const bodyParser = require("body-parser")
 const app = express();
 const port = process.env.PORT || 80;
 
-const studentData = JSON.parse(fs.readFileSync(__dirname + "/student.json"));
+const studentData = {
+    "Branch": "",
+    "Rollno": getRandomInt(20000),
+    "CPI": "0",
+    "Courses": [],
+    "Dept1": "",
+    "Dept3": "",
+    "Dept2": ""
+};
 const coursesData = JSON.parse(fs.readFileSync(__dirname + "/courselist.json"));
 const departmentData = JSON.parse(fs.readFileSync(__dirname + "/departmentlist.json"));
 let recommendationData = JSON.parse(fs.readFileSync(__dirname + "/recommendation.json"));
@@ -226,4 +234,7 @@ function updateStudentData() {
     fs.writeFileSync("student.json", JSON.stringify(studentData, null, 2), (err) => {
         if (err) throw err;
     });
+}
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
 }

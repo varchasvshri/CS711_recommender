@@ -1,5 +1,5 @@
 {
-  "Branch": "CHM",
+  "Branch": "PHY",
   "Rollno": 180207,
   "CPI": "333",
   "Courses": [
@@ -14,6 +14,18 @@
       "Love": true,
       "Hate": false,
       "Name": "FIBER OPTIC SYSTEMS I"
+    },
+    {
+      "CourseID": "PHY224A",
+      "Love": true,
+      "Hate": false,
+      "Name": "OPTICS"
+    },
+    {
+      "CourseID": "CE601",
+      "Love": true,
+      "Hate": false,
+      "Name": "STATISTICAL ANALYSIS FOR CIVIL ENGINEERS"
     }
   ],
   "Dept1": "ES",
