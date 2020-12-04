@@ -10,7 +10,7 @@ pref2 = inp['Dept2']
 pref3 = inp['Dept3']
 user_liked = np.array([])
 user_disliked = np.array([])
-user_rno = inp['Rollno']
+user_rno = int(inp['Rollno'])
 for c in inp['Courses']:
     if c['Love'] == True:
         user_liked = np.append(user_liked, [c['CourseID']])
