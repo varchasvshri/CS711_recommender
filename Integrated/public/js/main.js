@@ -120,26 +120,6 @@ $(document).ready(() => {
                     }
                 });
             }));
-            
-
-            let CPIControl = $("<input/>", {
-                class:"form-control",
-                value:data.CPI,
-                id:"studentCPIControl"
-            });
-
-            CPIControl.change(() => {
-                $.ajax({
-                    type: "POST",
-                    url: "/UpdateCPI",
-                    data: {
-                        CPI: CPIControl.val()
-                    }
-                });
-            })
-
-            let CPI = $("<p/>").text("My CPI is ").append(CPIControl);
-            $("#studentCPI").append(CPI)
 
             let RNOControl = $("<input/>", {
                 class:"form-control",

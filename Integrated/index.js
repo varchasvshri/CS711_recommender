@@ -12,7 +12,6 @@ const port = process.env.PORT || 80;
 const studentData = {
     "Branch": "",
     "Rollno": 0,
-    "CPI": "0",
     "Courses": [],
     "Dept1": "",
     "Dept3": "",
@@ -247,13 +246,6 @@ app.post("/UpdateBranchLikeTwo", (req, res) => {
 app.post("/UpdateBranchLikeThree", (req, res) => {
     let branchData = req.body.branchData;
     studentData.Dept3 = branchData;
-    updateStudentData();
-    res.json({ success: true });
-})
-
-app.post("/UpdateCPI", (req, res) => {
-    let CPIData = req.body.CPI;
-    studentData.CPI = CPIData;
     updateStudentData();
     res.json({ success: true });
 })

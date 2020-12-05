@@ -1,9 +1,81 @@
 {
-  "Branch": "",
-  "Rollno": 0,
-  "CPI": "0",
-  "Courses": [],
-  "Dept1": "",
-  "Dept3": "",
-  "Dept2": ""
+  "Branch": "PHY",
+  "Rollno": "180456",
+  "Courses": [
+    {
+      "CourseID": "PHY226B",
+      "Love": true,
+      "Hate": false,
+      "Name": "RELATIVITY"
+    },
+    {
+      "CourseID": "PHY224A",
+      "Love": true,
+      "Hate": false,
+      "Name": "OPTICS"
+    },
+    {
+      "CourseID": "PHY210A",
+      "Love": false,
+      "Hate": true,
+      "Name": "THERMAL PHYSICS"
+    },
+    {
+      "CourseID": "PHY431A",
+      "Love": true,
+      "Hate": false,
+      "Name": "QUANTUM MECHANICS I"
+    },
+    {
+      "CourseID": "PHY401A",
+      "Love": false,
+      "Hate": false,
+      "Name": "CLASSICAL MECHANICS I"
+    },
+    {
+      "CourseID": "PHY421A",
+      "Love": false,
+      "Hate": false,
+      "Name": "MATHEMATICAL METHODS I"
+    },
+    {
+      "CourseID": "PHY473A",
+      "Love": true,
+      "Hate": false,
+      "Name": "COMPUTATIONAL PHYSICS"
+    },
+    {
+      "CourseID": "CS711A",
+      "Love": true,
+      "Hate": false,
+      "Name": "INTRODUCTION TO GAME THEORY AND MECHANISM DESIGN"
+    },
+    {
+      "CourseID": "ESO204A",
+      "Love": false,
+      "Hate": false,
+      "Name": "FLUID MECHANICS AND RATE PROCESSES"
+    },
+    {
+      "CourseID": "EE210A",
+      "Love": true,
+      "Hate": false,
+      "Name": "MICROELECTRONICS-I"
+    },
+    {
+      "CourseID": "ENG125A",
+      "Love": true,
+      "Hate": false,
+      "Name": "INTRODUCTION TO FILM STUDIES"
+    },
+    {
+      "CourseID": "ENG124A",
+      "Love": true,
+      "Hate": false,
+      "Name": "LANGUAGE AND SOCIETY"
+    }
+  ],
+  "Dept1": "PHY",
+  "Dept3": "CSE",
+  "Dept2": "EE"
 }
