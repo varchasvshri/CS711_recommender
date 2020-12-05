@@ -35,7 +35,7 @@ app.get("/GetStudentData", (req, res) => {
 });
 
 app.get("/GetRecommendationData", (req, res) => {
-    let python = spawn('python', ['Recommend_script.py']);
+    let python = spawn('python3', ['Recommend_script.py']);
     python.stdout.on('data', function (data) {
         console.log("Processing done.");
     });
