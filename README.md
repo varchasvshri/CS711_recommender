@@ -1,6 +1,6 @@
 To run the recommender system - <br />
 Make sure you have nodejs installed along with python3 with libraries specified in requirements.txt <br />
-Then Run the following code on your terminal - 
+Then Run the following code on your terminal -  <br />
 git clone the repository
 ```
 cd Integrated
